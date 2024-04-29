@@ -1,4 +1,4 @@
-import { MAX_SPAM_AMOUNT } from "common.js";
+import { MAX_SPAM_AMOUNT } from "./common.js";
 
 class Node {
   constructor(address = null) {

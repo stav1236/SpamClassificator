@@ -19,3 +19,10 @@ const hashFunction = (input) => {
 export const calculateNumHashes = (size) => {
   return Math.ceil((size / 100) * Math.log(2));
 };
+
+export const generateEmailAddress = () => {
+  const domain = ["gmail.com", "yahoo.com", "outlook.com", "hotmail.com"];
+  const username = Math.random().toString(36).substring(2, 12);
+  const randDomain = domain[Math.floor(Math.random() * domain.length)];
+  return `${username}@${randDomain}`;
+};

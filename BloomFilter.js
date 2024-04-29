@@ -34,4 +34,8 @@ export class BloomFilter {
   hashAddress(address, seed) {
     return hashAddress(address, seed, this.bitArray.length);
   }
+
+  decItemsCount() {
+    this.itemCount--;
+  }
 }

@@ -12,6 +12,7 @@ export class SpamClassifier {
   }
 
   Remove_Spam(address) {
+    this.spamList.decItemsCount();
     this.deletedList.Add_Spam(address);
   }
 

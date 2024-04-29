@@ -1,4 +1,4 @@
-export const MAX_EMAILS_AMOUNT = 100;
+export const MAX_SPAM_AMOUNT = 100;
 
 export const hashAddress = (address, seed, size) => {
   const hashedAddress = hashFunction(address + seed.toString());

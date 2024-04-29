@@ -1,3 +1,5 @@
+import { MAX_SPAM_AMOUNT } from "common.js";
+
 class Node {
   constructor(address = null) {
     this.address = address;
@@ -6,7 +8,7 @@ class Node {
 }
 
 class SkipList {
-  constructor(size = 100) {
+  constructor(size = MAX_SPAM_AMOUNT) {
     this.head = new Node();
     this.currentMaxLevel = 1;
     this.MAX_LEVEL = Math.ceil(Math.log2(size));
@@ -73,15 +75,14 @@ class SkipList {
   }
 }
 
-class SpamFilter {
+export class SpamFilter {
   constructor() {
     this.spamList = new SkipList();
     this.spamCount = 0;
-    this.MAX_SPAM_ENTRIES = 100;
   }
 
   Add_Spam(address) {
-    if (this.spamCount < this.MAX_SPAM_ENTRIES) {
+    if (this.spamCount < MAX_SPAM_AMOUNT) {
       this.spamList.insert(address);
       this.spamCount++;
     } else {

@@ -1,8 +1,4 @@
-import {
-  MAX_EMAILS_AMOUNT,
-  hashAddress,
-  calculateNumHashes,
-} from "./common.js";
+import { MAX_SPAM_AMOUNT, hashAddress, calculateNumHashes } from "./common.js";
 
 export class CountingBloomFilter {
   constructor(size) {
@@ -12,7 +8,7 @@ export class CountingBloomFilter {
   }
 
   Add_Spam(address) {
-    if (this.itemCount >= MAX_EMAILS_AMOUNT) {
+    if (this.itemCount >= MAX_SPAM_AMOUNT) {
       console.log("Maximum item count reached. Cannot add more items.");
       return;
     }

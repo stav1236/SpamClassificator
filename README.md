@@ -1,2 +1,2 @@
 # SpamClassificator
-Spam classification using randomization
+Spam classification using probabilistic data structure

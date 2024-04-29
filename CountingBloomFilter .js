@@ -1,7 +1,7 @@
-class BloomFilter {
+class CountingBloomFilter {
   constructor(size) {
     this.itemCount = 0;
-    this.bitArray = new Array(size).fill(false);
+    this.countArray = new Array(size).fill(0); // Initialize counters to zero
     this.numHashes = this.calculateNumHashes(size);
   }
 
@@ -17,16 +17,29 @@ class BloomFilter {
 
     for (let seed = 0; seed < this.numHashes; seed++) {
       const position = this.hashAddress(address, seed);
-      this.bitArray[position] = true;
+      this.countArray[position]++;
     }
 
     this.itemCount++;
   }
 
+  Remove_Spam(address) {
+    if (!this.Is_Spam(address)) {
+      console.log("Address not found in the filter.");
+      return;
+    }
+    for (let seed = 0; seed < this.numHashes; seed++) {
+      const position = this.hashAddress(address, seed);
+      this.countArray[position]--;
+    }
+
+    --this.itemCount;
+  }
+
   Is_Spam(address) {
     for (let seed = 0; seed < this.numHashes; seed++) {
       const position = this.hashAddress(address, seed);
-      if (!this.bitArray[position]) {
+      if (this.countArray[position] <= 0) {
         return false;
       }
     }
@@ -35,7 +48,7 @@ class BloomFilter {
 
   hashAddress(address, seed) {
     const hashedAddress = this.hashFunction(address + seed.toString());
-    return parseInt(hashedAddress, 16) % this.size;
+    return Math.abs(parseInt(hashedAddress, 16)) % this.size;
   }
 
   hashFunction(input) {

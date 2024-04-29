@@ -9,14 +9,14 @@ class BloomFilter {
     return Math.ceil((size / 100) * Math.log(2));
   }
 
-  addSpam(address) {
+  Add_Spam(address) {
     for (let seed = 0; seed < this.numHashes; seed++) {
       const position = this.hashAddress(address, seed);
       this.bitArray[position] = true;
     }
   }
 
-  isSpam(address) {
+  Is_Spam(address) {
     for (let seed = 0; seed < this.numHashes; seed++) {
       const position = this.hashAddress(address, seed);
       if (!this.bitArray[position]) {

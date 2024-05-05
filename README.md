@@ -1,4 +1,3 @@
-
 # SpamClassificator
 
 ## Table of content
@@ -27,8 +26,6 @@
       - [SpamFilter class](#spamfilter-class-)
     + [main.js](#mainjs)
   * [License](#license)
-
-
 
 ## Overview
 

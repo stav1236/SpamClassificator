@@ -1,6 +1,35 @@
 
 # SpamClassificator
 
+## Table of content
+
+- [SpamClassificator](#spamclassificator)
+  * [Overview](#overview)
+    + [Email Spamming](#email-spamming)
+    + [Probabilistic Data Structures](#probabilistic-data-structures)
+    + [Bloom Filtering](#bloom-filtering)
+    + [Counting Bloom Filter](#counting-bloom-filter)
+    + [Skip List](#skip-list)
+  * [Description](#description)
+  * [Usage](#usage)
+    + [Prerequisites](#prerequisites)
+    + [Running the Project](#running-the-project)
+      - [Clone the repository:](#clone-the-repository-)
+      - [Navigate to the SpamClassificator folder:](#navigate-to-the-spamclassificator-folder-)
+      - [Run the project:](#run-the-project-)
+  * [Implementation](#implementation)
+    + [common.js](#commonjs)
+    + [BloomFilter.js](#bloomfilterjs)
+    + [CountingBloomFilter.js](#countingbloomfilterjs)
+    + [SkipList.js](#skiplistjs)
+      - [Node class:](#node-class-)
+      - [SkipList class:](#skiplist-class-)
+      - [SpamFilter class:](#spamfilter-class-)
+    + [main.js](#mainjs)
+  * [License](#license)
+
+
+
 ## Overview
 
 ### Email Spamming
